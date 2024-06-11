@@ -25,7 +25,7 @@ achievements and ethical considerations.
 
 ## What do the files do?
 
-- **Addressing Real-World Challenges Through AI and Robotics Solutions (1).pdf**: A detailed implementation of an automatic sorting system using the UR5e robotic arm and camera detection to identify and sort objects by colour.
+- **[Addressing Real-World Challenges Through AI and Robotics Solutions:](https://github.com/DanielKry/-Addressing-Real-World-Challenges-Through-AI-and-Robotics-Solutions/blob/main/Addressing%2BReal-World%2BChallenges%2BThrough%2BAI%2Band%2BRobotics%2BSolutions.pdf) Is a detailed documentation of an automatic sorting system using the UR5e robotic arm and camera detection to identify and sort objects by colour.
 - **Robot.py**: Contains the code for the UR5e robot's state management, sensor and motor initialisation, camera recognition, and object handling logic.
 - **Supervisor.py**: Simulates a manufacturing environment, generating custom shapes and placing them on a conveyor belt for the robot to sort.
 
