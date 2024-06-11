@@ -1,0 +1,514 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/ThreadMetalPlate.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/apartment_structure/protos/Wall.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/Roughcast.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/solids/protos/SolidBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/GalvanizedMetal.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/CorrugatedMetal.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/universal_robots/protos/UR5e.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/factory/conveyors/protos/ConveyorBelt.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/devices/robotiq/protos/Robotiq3fGripper.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/factory/containers/protos/PlasticCrate.proto"
+
+WorldInfo {
+  info [
+    "Universal Robot UR3e, UR5e and UR10e grasping cans using Robotiq 3F grippers."
+  ]
+  title "Universal Robot"
+  basicTimeStep 8
+  physicsDisableAngularThreshold 0.1
+  contactProperties [
+    ContactProperties {
+      bounce 0.1
+    }
+    ContactProperties {
+      material1 "slope"
+      coulombFriction [
+        0.5
+      ]
+    }
+  ]
+}
+Viewpoint {
+  orientation -0.37547228061520616 -0.22306906312328031 0.8995892171246372 4.123250147856319
+  position 4.007868375616725 6.064379413661427 9.488366400265699
+  exposure 1.7
+}
+TexturedBackground {
+  texture "factory"
+}
+Floor {
+  size 18 7
+  appearance ThreadMetalPlate {
+  }
+}
+Pose {
+  translation 2.52024 2.10889 0.796
+  rotation 0 0 1 -1.3089953071795861
+}
+Wall {
+  translation -2.835 2.58 0
+  rotation 0 1 0 0
+  size 9 0.2 2.4
+  appearance Roughcast {
+    textureTransform TextureTransform {
+      scale 2 1
+    }
+  }
+}
+Wall {
+  translation -2.835 2.58 0
+  rotation 0 1 0 0
+  name "Barrier"
+  size 3.2 0.001 0.5
+  appearance Roughcast {
+    textureTransform TextureTransform {
+      scale 2 1
+    }
+  }
+}
+Wall {
+  translation 0.115 1.34 0
+  rotation 0 1 0 0
+  name "Barrier(1)"
+  size 3.1 0.001 0.4
+  appearance Roughcast {
+    colorOverride 1 1 0
+    textureTransform TextureTransform {
+      scale 2 1
+    }
+  }
+}
+Wall {
+  translation 0.115 -1.44 0
+  rotation 0 1 0 0
+  name "Barrier(2)"
+  size 3.1 0.001 1
+  appearance Roughcast {
+    colorOverride 1 1 0
+    textureTransform TextureTransform {
+      scale 2 1
+    }
+  }
+}
+Wall {
+  translation 4.375 2.58 0
+  name "wall(2)"
+  size 5 0.2 2.4
+  appearance Roughcast {
+    textureTransform TextureTransform {
+      scale 2 1
+    }
+  }
+}
+Wall {
+  translation 0 -2.42 0
+  name "wall(1)"
+  size 15 0.2 2.4
+  appearance Roughcast {
+    textureTransform TextureTransform {
+      scale 2 1
+    }
+  }
+}
+Pose {
+  translation 1.77 2.67 1.05
+  rotation 1 0 0 1.5707996938995747
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 0
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.23 0.3 0.01
+      }
+    }
+  ]
+}
+SolidBox {
+  translation -0.135 -0.0323 0.305
+  size 1.5 0.4 0.61
+  appearance GalvanizedMetal {
+    colorOverride 0 0 1
+  }
+}
+UR5e {
+  translation 0 0 0.61
+  rotation 6.77193e-08 -6.60255e-09 -1 1.5708
+  controller "robot"
+  selfCollision FALSE
+  toolSlot [
+    Robotiq3fGripper {
+    }
+    Camera {
+      translation -0.00082944 0.020001 -0.050006
+      rotation 0.7071062811840476 0.7071072811844453 -2.451180974723328e-06 3.14159
+      recognition Recognition {
+      }
+    }
+    DistanceSensor {
+      translation 0 0.1 0
+      rotation 0 0 1 1.570796
+    }
+  ]
+}
+ConveyorBelt {
+  translation 3.18 -1.05 0
+  rotation 0 0 1 3.141592
+  size 8 0.7 0.6
+  appearance CorrugatedMetal {
+    textureTransform TextureTransform {
+      scale 6 3.1
+    }
+  }
+  borderHeight 0
+  speed 1.3
+}
+Robot {
+  translation 0 0 0.7
+  name "Supervisor"
+  controller "Supervisor"
+  supervisor TRUE
+}
+DEF Cube Solid {
+  translation -2.80247 -0.593895 0.400115
+  rotation 4.1662647318414476e-05 1.3605489609293859e-05 0.9999999990395572 -3.045048838973045
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 1 0
+        metalness 0
+      }
+      geometry Box {
+        size 0.08 0.08 0.08
+      }
+    }
+  ]
+  name "Cube"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+  recognitionColors [
+    1 1 0
+  ]
+}
+DEF Cube1 Solid {
+  translation -2.78225 -0.802942 0.400114
+  rotation 4.1662647318414476e-05 1.3605489609293859e-05 0.9999999990395572 -3.045048838973045
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 0
+        metalness 0
+      }
+      geometry Box {
+        size 0.08 0.08 0.08
+      }
+    }
+  ]
+  name "Cube(8)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+  recognitionColors [
+    0 0 0
+  ]
+}
+DEF Cube2 Solid {
+  translation -2.33439 -0.759538 0.400085
+  rotation 4.1662647318414476e-05 1.3605489609293859e-05 0.9999999990395572 -3.045048838973045
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.08 0.08 0.08
+      }
+    }
+  ]
+  name "Cube(1)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+  recognitionColors [
+    1 0 1
+  ]
+}
+DEF Cube3 Solid {
+  translation -4.71317 -0.989929 0.400295
+  rotation 4.1662647318414476e-05 1.3605489609293859e-05 0.9999999990395572 -3.045048838973045
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 1 0
+        metalness 0
+      }
+      geometry Box {
+        size 0.08 0.08 0.08
+      }
+    }
+  ]
+  name "Cube2"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+  recognitionColors [
+    0 1 0
+  ]
+}
+DEF Cube5 Solid {
+  translation -4.08612 -0.929201 0.400242
+  rotation 4.1662647318414476e-05 1.3605489609293859e-05 0.9999999990395572 -3.045048838973045
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 1 0
+        metalness 0
+      }
+      geometry Box {
+        size 0.08 0.08 0.08
+      }
+    }
+  ]
+  name "Cube2(1)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+  recognitionColors [
+    0 1 0
+  ]
+}
+DEF Cube6 Solid {
+  translation -3.47898 -0.870398 0.400188
+  rotation 4.1662647318414476e-05 1.3605489609293859e-05 0.9999999990395572 -3.045048838973045
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 1 0
+        metalness 0
+      }
+      geometry Box {
+        size 0.08 0.08 0.08
+      }
+    }
+  ]
+  name "Cube2(2)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+  recognitionColors [
+    0 1 0
+  ]
+}
+DEF Cube7 Solid {
+  translation 2.25117 -0.541947 0.299871
+  rotation 0.7065380032015887 0.040083500181633376 0.7065390032015932 -3.0614653071795863
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.08 0.08 0.08
+      }
+    }
+  ]
+  name "Cube(2)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+  recognitionColors [
+    0 0 1
+  ]
+}
+DEF Cube8 Solid {
+  translation -2.06727 1.59384 0.299871
+  rotation 0.6995769632558144 -0.14554985356019834 0.699576523770186 2.8525219315228068
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.08 0.08 0.08
+      }
+    }
+  ]
+  name "Cube(5)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+  recognitionColors [
+    0 0 1
+  ]
+}
+DEF Cube9 Solid {
+  translation -1.2328 1.23087 0.299871
+  rotation 0.6995769632558144 -0.14554985356019834 0.699576523770186 2.8525219315228068
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.08 0.08 0.08
+      }
+    }
+  ]
+  name "Cube(6)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+  recognitionColors [
+    0 0 1
+  ]
+}
+DEF Cube10 Solid {
+  translation 2.71414 -0.609714 0.0499124
+  rotation 0.6589109542838106 0.7522209478098292 9.38185934907311e-07 3.14159
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        metalness 0
+      }
+      geometry Box {
+        size 0.08 0.08 0.08
+      }
+    }
+  ]
+  name "Cube(3)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+  recognitionColors [
+    1 0 0
+  ]
+}
+DEF Cube11 Solid {
+  translation -2.49526 -0.0424175 0.0499019
+  rotation 7.640150727992649e-16 -1.1976082287863417e-15 1 1.1222785700798006
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        metalness 0
+      }
+      geometry Box {
+        size 0.08 0.08 0.08
+      }
+    }
+  ]
+  name "Cube(4)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+  recognitionColors [
+    1 0 0
+  ]
+}
+DEF Cube12 Solid {
+  translation -2.90073 0.152716 0.0499019
+  rotation 7.640150727992649e-16 -1.1976082287863417e-15 1 1.1222785700798006
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        metalness 0
+      }
+      geometry Box {
+        size 0.08 0.08 0.08
+      }
+    }
+  ]
+  name "Cube(7)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+  physics Physics {
+  }
+  recognitionColors [
+    1 0 0
+  ]
+}
+PlasticCrate {
+  translation -1.16 -1.05 0
+  size 0.6 0.7 0.5
+}
+ConveyorBelt {
+  translation 0.14 0.36 0
+  rotation 0 0 1 1.01503e-06
+  name "conveyor belt(1)"
+  size 3 0.3 0.25
+  appearance CorrugatedMetal {
+    textureTransform TextureTransform {
+      scale 6 3.1
+    }
+  }
+  borderHeight 0
+  speed 1.3
+  acceleration 0.012
+  timer 90
+}
+ConveyorBelt {
+  translation 0.14 1.06 0
+  rotation 0 0 1 1.01503e-06
+  name "conveyor belt(3)"
+  size 3 0.5 0.25
+  appearance CorrugatedMetal {
+    textureTransform TextureTransform {
+      scale 6 3.1
+    }
+  }
+  borderHeight 0
+  speed 1.3
+  acceleration 0.012
+  timer 90
+}
+ConveyorBelt {
+  translation -0.93 -0.45 0.1
+  rotation 0 0 1 3.14159
+  name "conveyor belt(2)"
+  size 3 0.3 0.25
+  appearance CorrugatedMetal {
+    textureTransform TextureTransform {
+      scale 6 3.1
+    }
+  }
+  borderHeight 0
+  speed 7
+  acceleration 0.012
+  timer 90
+}
