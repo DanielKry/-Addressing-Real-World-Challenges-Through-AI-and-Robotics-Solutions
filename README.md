@@ -15,11 +15,13 @@ achievements and ethical considerations.
 
 1. Ensure Python is installed. The most compatible version is Python 3.10.11.
 2. Install Webots from the official [Webots website](https://cyberbotics.com/).
-3. Install all required libraries for each code file using the PIP commands included in the files.
-4. Open Webots and load the provided world file.
-5. Open the code in your preferred IDE (Visual Studio Code is recommended) or directly in Webots.
-6. Select the correct Python environment (Python 3.10.11).
-7. Run each code segment in order, starting from the top, to avoid errors.
+3. Ensure all required libraries for each code file are installed. These can typically be installed using PIP commands included in the files if needed.
+4. Download the [World](https://github.com/DanielKry/-Addressing-Real-World-Challenges-Through-AI-and-Robotics-Solutions/blob/main/worlds/Automatic%20Sorting%20System%20Using%20AI%20and%20Robotics.wbt) and place it in the `worlds` directory.
+5. Download the [controller](https://github.com/DanielKry/-Addressing-Real-World-Challenges-Through-AI-and-Robotics-Solutions/tree/main/worlds/Controllers) and place them in the `controllers` directory.
+6. Open Webots and load the downloaded world file.
+7. Open the code in your preferred IDE (Visual Studio Code is recommended) or directly in Webots.
+8. Select the correct Python environment (Python 3.10.11).
+9. Run each code segment in order, starting from the top, to avoid errors.
 
 ## What do the files do?
 
@@ -34,5 +36,3 @@ This code must be run in a Webots environment due to the need for a graphical in
 For more information or to view additional files, please message me.
 
 Thank you for reading!
-
----
