@@ -1,4 +1,4 @@
-Automatic Sorting System Using AI and Robotics
+# Automatic Sorting System Using AI and Robotics
 
 This project addresses real-world challenges in manufacturing and logistics through an automated 
 sorting system using the UR5e robotic arm and machine vision technology. The system identifies 
